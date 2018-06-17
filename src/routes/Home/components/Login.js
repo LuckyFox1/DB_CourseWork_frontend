@@ -17,16 +17,12 @@ class Login extends React.Component {
         password: password
       },
       success: function (data) {
-        console.log(data.login[0])
-        // let login = JSON.parse(data.login)
         props.loginUser(data.login[0], data.success)
       }
     })
   }
 
   render () {
-    // const { tours } = this.props
-    console.log(this.props)
     return <div className={'login'}>
       <form className={'form-horizontal'}>
         <div className={'form-group'}>

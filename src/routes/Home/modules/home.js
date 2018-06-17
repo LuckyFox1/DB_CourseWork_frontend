@@ -4,6 +4,7 @@
 // export const COUNTER_INCREMENT = 'COUNTER_INCREMENT'
 // export const COUNTER_DOUBLE_ASYNC = 'COUNTER_DOUBLE_ASYNC'
 const LOGIN_USER = 'LOGIN_USER'
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 // ------------------------------------
 // Actions
 // ------------------------------------
@@ -13,6 +14,14 @@ export function loginUser (login, loggedIn) {
     type: LOGIN_USER,
     login,
     loggedIn
+  }
+}
+
+export function setCurrentPage (page, tours) {
+  return {
+    type: SET_CURRENT_PAGE,
+    page,
+    tours
   }
 }
 
@@ -29,6 +38,13 @@ const ACTION_HANDLERS = {
       login: action.login.user_login,
       userId: action.login.id_user,
       loggedIn: action.loggedIn
+    }
+  },
+  [SET_CURRENT_PAGE]: (state, action) => {
+    return {
+      ...state,
+      currPage: action.page,
+      tours: action.tours
     }
   }
 }

@@ -17,7 +17,6 @@ class HomeView extends React.Component {
 
   render () {
     const { tours } = this.props
-    console.log(this.props)
     return <div className={'tours'}>
       { tours && tours.loggedIn
         ? <Tours />
